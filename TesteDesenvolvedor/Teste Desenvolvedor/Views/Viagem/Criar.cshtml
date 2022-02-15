@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar Viagem";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cadastrar Viagem</h1>
+</div>
+
+<form>
+    <div class="form-group">
+        <label for="data">Data</label>
+        <input type="datetime" class="form-control" placeholder="Insira a data">        
+    </div>
+    
+    <div class="form-group">
+        <label for="hora">Hora</label>
+        <input type="time" class="form-control" placeholder="Insira o horário">
+    </div>
+
+    <div class="form-group">
+        <label for="LocalDeEntrega">Local de entrega</label>
+        <input type="text" class="form-control" placeholder="Insira a marca do caminhão">        
+    </div>
+
+    <div class="form-group">
+        <label for="LocalDeSaida">Local de saida</label>
+        <input type="text" class="form-control" placeholder="Insira o modelo do caminhão">        
+    </div>
+
+    <div class="form-group">
+        <label for="placacaminhao">Distancia entre as cidades</label>
+        <input type="text" class="form-control" placeholder="Insira a placa do caminhão">        
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Cadastrar Viagem</button>
+    <a class="btn btn-secondary" asp-controller="Home" asp-action="Index" role="button">Voltar</a>
+</form>

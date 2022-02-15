@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Listagem de Motoristas Cadastrados";
+}
+
+<div class="text-center">
+
+<div class="d-grid gap-2 d-d-md-flex justify-content-md-start">
+    <a class="btn btn-primary" role="button" asp-controller="Motorista" asp-action="Criar">Cadastrar Motorista</a> 
+</div>
+
+<h1 class="display-9">Lista de Cadastros</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Marca do Caminhão</th>
+            <th scope="col">Modelo do Caminhão</th>
+            <th scope="col">Placa do Caminhão</th>
+            <th scope="col">Quantidade de eixos do Caminhão</th>
+            <th scope="col">Endereço completo</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Marcos</td>
+            <td>Sem Sobrenome</td>
+            <td>Marca Desconhecida</td>
+            <td>Novo</td>
+            <td>ABC-0099</td>
+            <td>2 eixos</td>
+            <td>Rua Um, nº 100, bairro Dez, Santo Amaro</td>
+            <td>
+                <div class="btn-group" role="group">
+                    <a role="button" class="btn btn-primary" asp-controller="Motorista" asp-action="Editar">Editar</a>
+                    <a role="button" class="btn btn-danger" asp-controller="Motorista" asp-action="Excluir">Deletar</a>                    
+                </div>
+            </td>
+
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Fulano</td>
+            <td>Fulanos</td>
+            <td>BMW</td>
+            <td>2010</td>
+            <td>ABC-1199</td>
+            <td>3 eixos</td>
+            <td>Rua Dois, nº 200, bairro Quatro, Santo Amaro</td>
+            <td>
+                <div class="btn-group" role="group">
+                    <a role="button" class="btn btn-primary" asp-controller="Motorista" asp-action="Editar">Editar</a>
+                    <a role="button" class="btn btn-danger" asp-controller="Motorista" asp-action="Excluir">Deletar</a>                  
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Norton</td>
+            <td>Antivirus</td>
+            <td>Mercedes</td>
+            <td>Velho</td>
+            <td>BBC-2222</td>
+            <td>2 eixos</td>
+            <td>Rua Três, nº 300, bairro Seis, Santo Amaro</td>
+            <td>
+                <div class="btn-group" role="group">
+                    <a role="button" class="btn btn-primary" asp-controller="Motorista" asp-action="Editar">Editar</a>
+                    <a role="button" class="btn btn-danger" asp-controller="Motorista" asp-action="Excluir">Deletar</a>                                        
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
