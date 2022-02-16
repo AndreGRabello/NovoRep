@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<MotoristaModel>
+@{
     ViewData["Title"] = "Listagem de Motoristas Cadastrados";
 }
 
@@ -25,55 +26,28 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Marcos</td>
-            <td>Sem Sobrenome</td>
-            <td>Marca Desconhecida</td>
-            <td>Novo</td>
-            <td>ABC-0099</td>
-            <td>2 eixos</td>
-            <td>Rua Um, nº 100, bairro Dez, Santo Amaro</td>
-            <td>
-                <div class="btn-group" role="group">
-                    <a role="button" class="btn btn-primary" asp-controller="Motorista" asp-action="Editar">Editar</a>
-                    <a role="button" class="btn btn-danger" asp-controller="Motorista" asp-action="Excluir">Deletar</a>                    
-                </div>
-            </td>
-
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Fulano</td>
-            <td>Fulanos</td>
-            <td>BMW</td>
-            <td>2010</td>
-            <td>ABC-1199</td>
-            <td>3 eixos</td>
-            <td>Rua Dois, nº 200, bairro Quatro, Santo Amaro</td>
-            <td>
-                <div class="btn-group" role="group">
-                    <a role="button" class="btn btn-primary" asp-controller="Motorista" asp-action="Editar">Editar</a>
-                    <a role="button" class="btn btn-danger" asp-controller="Motorista" asp-action="Excluir">Deletar</a>                  
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Norton</td>
-            <td>Antivirus</td>
-            <td>Mercedes</td>
-            <td>Velho</td>
-            <td>BBC-2222</td>
-            <td>2 eixos</td>
-            <td>Rua Três, nº 300, bairro Seis, Santo Amaro</td>
-            <td>
-                <div class="btn-group" role="group">
-                    <a role="button" class="btn btn-primary" asp-controller="Motorista" asp-action="Editar">Editar</a>
-                    <a role="button" class="btn btn-danger" asp-controller="Motorista" asp-action="Excluir">Deletar</a>                                        
-                </div>
-            </td>
-        </tr>
+        @if (Model != null && Model.Any())
+        {
+            foreach(MotoristaModel motorista in Model)
+            {
+                <tr>
+                    <th scope="row">@motorista.Id</th>
+                    <td>@motorista.Nome</td>
+                    <td>@motorista.Sobrenome</td>
+                    <td>@motorista.MarcaDoCaminhao</td>
+                    <td>@motorista.ModeloDoCaminhao</td>
+                    <td>@motorista.PlacaDoCaminhao</td>
+                    <td>@motorista.QuantidadeDeEixosDoCaminhao</td>
+                    <td>@motorista.EnderecoCompleto</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a role="button" class="btn btn-primary" asp-route-id="@motorista.Id" asp-controller="Motorista" asp-action="Editar">Editar</a>
+                            <a role="button" class="btn btn-danger" asp-route-id="@motorista.Id" asp-controller="Motorista" asp-action="Excluir">Deletar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
     </tbody>
 </table>
 

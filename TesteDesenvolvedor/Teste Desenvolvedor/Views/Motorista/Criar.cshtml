@@ -1,45 +1,46 @@
-﻿@{
-    ViewData["Title"] = "Criar Cadastro de Motoristas";
+﻿@model MotoristaModel
+@{
+    ViewData["Title"] = "Cadastrar Motoristas";
 }
 
 <div class="text-center">
     <h1 class="display-4">Cadastrar Motorista</h1>
 </div>
 
-<form>
+<form asp-controller="Motorista" asp-action="Criar" method="post">
     <div class="form-group">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" placeholder="Insira o primeiro nome">        
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Insira o primeiro nome">        
     </div>
     
     <div class="form-group">
         <label for="sobrenome">Sobrenome</label>
-        <input type="text" class="form-control" placeholder="Insira o sobrenome">
+        <input type="text" asp-for="Sobrenome" class="form-control" placeholder="Insira o sobrenome">
     </div>
 
     <div class="form-group">
         <label for="marcacaminhao">Marca do Caminhão</label>
-        <input type="text" class="form-control" placeholder="Insira a marca do caminhão">        
+        <input type="text" asp-for="MarcaDoCaminhao" class="form-control" placeholder="Insira a marca do caminhão">        
     </div>
 
     <div class="form-group">
         <label for="modelocaminhao">Modelo do Caminhão</label>
-        <input type="text" class="form-control" placeholder="Insira o modelo do caminhão">        
+        <input type="text" asp-for="ModeloDoCaminhao" class="form-control" placeholder="Insira o modelo do caminhão">        
     </div>
 
     <div class="form-group">
         <label for="placacaminhao">Placa do Caminhão</label>
-        <input type="text" class="form-control" placeholder="Insira a placa do caminhão">        
+        <input type="text" asp-for="PlacaDoCaminhao" class="form-control" placeholder="Insira a placa do caminhão">        
     </div>
 
     <div class="form-group">
         <label for="eixoscaminhao">Quantidade de Eixos do Caminhão</label>
-        <input type="text" class="form-control" placeholder="Insira a quantidade de eixos do caminhão">        
+        <input type="text" asp-for="QuantidadeDeEixosDoCaminhao" class="form-control" placeholder="Insira a quantidade de eixos do caminhão">        
     </div>
 
     <div class="form-group">
         <label for="nome">Endereço completo</label>
-        <input type="text" class="form-control" placeholder="Insira o endereço completo">        
+        <input type="text" asp-for="EnderecoCompleto" class="form-control" placeholder="Insira o endereço completo">        
     </div>
 
     <button type="submit" class="btn btn-primary">Cadastrar</button>
